@@ -3,19 +3,53 @@
     <div class=" col-md-12 d-flex align-items-center">
       <h1> <%= @the_board.name %> </h1>
       <div class="ms-auto">
-        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#newPostModal"> Add a new post </button>
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#newPostModal"> Add new post </button>
       </div>
     </div>
   </div>
 
-<form action="/insert_post" method="post">
-  <div>
-    <label for="title_box">
-      Title
-    </label>
+  <ul class="nav nav-tabs nav-fill mb-3" id="myTab" role="tablist">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link active" id="active-tab" data-bs-toggle="tab" data-bs-target="#active-tab-pane" type="button" role="tab">Active posts
+      </button>
+    </li>
 
-    <input type="text" id="title_box" name="query_title">
+    <li class="nav-item" role="presentation">
+      <button class="nav-link" id="expired-tab" data-bs-toggle="tab" data-bs-target="#expired-tab-pane" type="button" role="tab">Expired posts
+      </button>
+    </li>
+  </ul>
+
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="active-tab-pane" role="tabpanel">
+      <div class="row row-cols-1 row-cols-md-4 g-4">
+      </div>
   </div>
+
+
+
+
+<div class="modal fade" id="newPostModal" tabindex="-1" aria-labelledby="newPostModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h1 class="modal-title fs-5" id="newPostModalLabel">New Post</h1>
+      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+      </button>
+    </div>
+    <div class="modal-body">
+      <form action="/insert_post" method="post">
+        <div class="mb-3">
+          <label for="title_box" class="form-label"> Title </label>
+          <input type="text" id="title_box" name="query_title" class="form-control">
+        </div>
+        <div class="mb-3">
+          <label for="body_box" class="form-label"> Body </label>
+          <input type="text" id="body_box" name="query_body" rows="3" class="form-control">
+        </div>
+    </div>
+</div>
+ 
 
   <div>
     <label for="body_box">
