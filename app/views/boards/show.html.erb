@@ -1,16 +1,12 @@
-<div>
-  <div>
-    <h1>
-      <%= @the_board.name %>
-    </h1>
+<div class="container">
+  <div class="row mb-3">
+    <div class=" col-md-12 d-flex align-items-center">
+      <h1> <%= @the_board.name %> </h1>
+      <div class="ms-auto">
+        <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#newPostModal"> Add a new post </button>
+      </div>
+    </div>
   </div>
-</div>
-
-<hr>
-
-<h2>
-  Add a new post
-</h2>
 
 <form action="/insert_post" method="post">
   <div>
