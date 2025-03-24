@@ -28,13 +28,13 @@
 
 
     <% if notice.present? %>
-      <div style="color: green">
+      <div class="alert alert-success container" role="alert">
         <%= notice %>
       </div>
     <% end %>
 
     <% if alert.present? %>
-      <div style="color: red">
+      <div class="alert alert-warning container" role="alert">
         <%= alert %>
       </div>
     <% end %>
